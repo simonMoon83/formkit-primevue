@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [vue()],
+  base: '/formkit-primevue/', // <--- 이 줄을 추가하세요!
   test: {
     // enable jest-like global test APIs
     globals: true,
