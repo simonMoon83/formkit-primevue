@@ -97,6 +97,7 @@ function sidebarGuide() {
         { text: 'Styling', link: '/guide/styling' },
         { text: 'Prefix / Suffix', link: '/guide/prefix' },
         { text: 'Examples', link: '/guide/examples' },
+        { text: 'Grid Form Demo 4', link: '/guide/samples/GridFormDemo4' }
       ],
     },
     {
