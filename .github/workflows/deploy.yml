@@ -6,6 +6,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions: # <--- 이 부분을 추가하거나 수정하세요
+      contents: write  # GITHUB_TOKEN에 리포지토리 콘텐츠 쓰기 권한 부여    
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
