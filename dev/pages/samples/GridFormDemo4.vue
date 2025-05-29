@@ -396,7 +396,7 @@ async function fetchSchemaFromDB(): Promise<any[]> {
                       attrs: { class: 'flex align-items-center gap-2' },
                       children: [
                         {
-                          $formkit: 'primeInputDate',
+                          $formkit: 'date',
                           name: 'date_from',
                           placeholder: '시작일',
                           class: 'w-full'
@@ -406,7 +406,7 @@ async function fetchSchemaFromDB(): Promise<any[]> {
                           children: '~'
                         },
                         {
-                          $formkit: 'primeInputDate',
+                          $formkit: 'date',
                           name: 'date_to',
                           placeholder: '종료일',
                           class: 'w-full'
@@ -492,22 +492,25 @@ async function fetchSchemaFromDB(): Promise<any[]> {
                   attrs: { class: 'col-span-2 flex justify-content-end gap-2' },
                   children: [
                     {
-                      $el: 'Button',
-                      props: {
-                        type: 'reset',
-                        label: '초기화',
-                        icon: 'pi pi-refresh',
-                        outlined: true,
-                        class: 'p-button-secondary'
+              $formkit: 'button', // Use FormKit's 'button' type
+              type: 'reset',     // Standard HTML button type, triggers form @reset
+              label: '초기화',
+              // Attempt to apply PrimeVue classes for basic styling.
+              // Full PrimeVue button styling would require a custom FormKit input.
+              attrs: {
+                class: 'p-button p-button-outlined p-button-secondary pi pi-refresh' 
                       }
+              // Note: The 'icon' prop from PrimeVue Button doesn't directly map.
+              // Adding 'pi pi-refresh' to class for icon if PrimeIcons CSS is global.
                     },
                     {
-                      $el: 'Button',
-                      props: {
-                        type: 'submit',
-                        label: '검색',
-                        icon: 'pi pi-search'
+              $formkit: 'submit', // Use FormKit's 'submit' type
+              label: '검색',
+              attrs: {
+                class: 'p-button pi pi-search'
                       }
+              // Note: The 'icon' prop from PrimeVue Button doesn't directly map.
+              // Adding 'pi pi-search' to class for icon.
                     }
                   ]
                 }
